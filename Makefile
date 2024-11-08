@@ -6,7 +6,7 @@
 #    By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/04 22:30:01 by teando            #+#    #+#              #
-#    Updated: 2024/11/09 00:24:34 by teando           ###   ########.fr        #
+#    Updated: 2024/11/09 03:21:36 by teando           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,11 +46,11 @@ $(OUT_DIR)/%.o: $(ROOT_DIR)/src/%.c
 	$(CC) $(CFLAGS) $(IDFLAGS) -c $< -o $@ $(INCLUDES)
 
 clean:
-	rm -f $(OBJS)
+	rm -rf $(OBJS) $(OUT_DIR)
 	make -C $(LIBFT_PATH) clean
 
 fclean: clean
-	rm -rf $(NAME) $(OUT_DIR)
+	rm -rf $(NAME)
 	make -C $(LIBFT_PATH) fclean
 
 norm: $(INCS_DIR) $(SRCS)

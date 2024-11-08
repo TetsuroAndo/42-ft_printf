@@ -6,31 +6,46 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 20:32:43 by teando            #+#    #+#             */
-/*   Updated: 2024/11/09 00:09:28 by teando           ###   ########.fr       */
+/*   Updated: 2024/11/09 02:06:22 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
-int	type_putbase(long nbr, char *base)
+static int	ul_putbase(unsigned long nbr, char *base, size_t base_len)
 {
 	int	len;
-	int	base_len;
+	int	r;
 
-	len = 0;
+	if (nbr >= base_len)
+	{
+		len = ul_putbase(nbr / base_len, base, base_len);
+		r = type_putchar(base[nbr % base_len]);
+		if (r == -1)
+			return (-1);
+		return (len + r);
+	}
+	return (type_putchar(base[nbr]));
+}
+
+int	type_putbase(long long nbr, char *base)
+{
+	int		r;
+	int		cnt;
+	size_t	base_len;
+
+	cnt = 0;
 	base_len = ft_strlen(base);
 	if (nbr < 0)
 	{
-		len = type_putchar('-');
+		r = type_putchar('-');
+		if (r == -1)
+			return (-1);
+		cnt = r;
 		nbr = -nbr;
 	}
-	if (nbr < base_len)
-		len += type_putchar(base[nbr]);
-	else
-	{
-		len += type_putbase(nbr / base_len, base);
-		len += type_putbase(nbr % base_len, base);
-	}
-	return (len);
+	r = ul_putbase(nbr, base, base_len);
+	if (r == -1)
+		return (-1);
+	return (cnt + r);
 }

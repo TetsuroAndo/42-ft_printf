@@ -6,13 +6,11 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 19:39:42 by teando            #+#    #+#             */
-/*   Updated: 2024/11/09 00:08:32 by teando           ###   ########.fr       */
+/*   Updated: 2024/11/09 01:03:04 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdarg.h>
-#include <unistd.h>
 
 static int	format_handler(const char format, va_list ap)
 {
