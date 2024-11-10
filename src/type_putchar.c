@@ -6,16 +6,15 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 21:28:48 by teando            #+#    #+#             */
-/*   Updated: 2024/11/08 23:10:08 by teando           ###   ########.fr       */
+/*   Updated: 2024/11/10 10:56:17 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
-int	type_putchar(int c)
+int	type_putchar(int fd, int c)
 {
-	if (ft_putchar(c) == -1)
+	if (ft_putchar_fd(c, fd) == -1)
 		return (-1);
 	return (1);
 }

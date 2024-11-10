@@ -6,7 +6,7 @@
 #    By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/04 22:30:01 by teando            #+#    #+#              #
-#    Updated: 2024/11/09 03:21:36 by teando           ###   ########.fr        #
+#    Updated: 2024/11/10 10:44:29 by teando           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ INCLUDES = -I./inc -I$(LIBFT_PATH)
 SRCS	:= \
 		$(addprefix $(ROOT_DIR)/, \
 			$(addprefix src/, \
+				ft_dprintf.c \
 				ft_printf.c \
 				type_putbase.c \
 				type_putchar.c \
