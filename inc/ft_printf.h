@@ -6,7 +6,7 @@
 /*   By: teando <teando@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 22:28:51 by teando            #+#    #+#             */
-/*   Updated: 2024/11/09 01:36:41 by teando           ###   ########.fr       */
+/*   Updated: 2024/11/10 10:14:05 by teando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 # include <stddef.h>
 # include <stdint.h>
 # include <unistd.h>
-
-int	ft_putchar(int c);
 
 int	ft_printf(const char *format, ...);
 int	type_putbase(long long nbr, char *base);
